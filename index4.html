@@ -1,0 +1,212 @@
+﻿<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>Проект 3 — Воронцов Дмитро</title>
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: "Segoe UI", sans-serif;
+            background: #f4f4f8;
+            color: #222;
+            margin: 0;
+            padding: 0;
+            font-family: "Segoe UI", sans-serif;
+            background: url('linn.png') no-repeat center center;
+            background-size: cover; /* чтобы картинка масштабировалась по размеру экрана */
+            color: #222;
+        }
+
+        .page-header {
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        /*кнопка ебаная*/
+
+        .btn {
+            background: transparent;
+            border: 1px solid #141414;
+            outline: none;
+            padding: 12px 40px;
+            height: 60px;
+            border-radius: 100px;
+            overflow: hidden;
+            transform: scaleX(1);
+            transition: transform 0.5s cubic-bezier(0.4, 0, 0, 1);
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            position: relative;
+        }
+
+            .btn:hover {
+                animation: animate-scaleX 0.6s cubic-bezier(0.4, 0, 0, 1);
+                background: transparent;
+            }
+
+            .btn::after {
+                content: "";
+                position: absolute;
+                left: 0;
+                bottom: 0;
+                background: black;
+                transition: transform 0.5s cubic-bezier(0.4, 0, 0, 1), border-radius 0.5s cubic-bezier(0.4, 0, 0, 1);
+                width: 100%;
+                height: 100%;
+                border-radius: 50% 50% 0 0;
+                transform: translateY(100%);
+            }
+
+            .btn:hover::after {
+                transform: translateY(0%);
+                border-radius: 0;
+            }
+
+            .btn span {
+                font-size: 20px;
+                font-weight: 500;
+                overflow: hidden;
+                position: relative;
+                color: black;
+                z-index: 2;
+            }
+
+                .btn span:after {
+                    width: 100%;
+                    height: 100%;
+                    transition: transform 0.5s cubic-bezier(0.4, 0, 0, 1);
+                    content: attr(data-text);
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    position: absolute;
+                    left: 50%;
+                    bottom: 0;
+                    z-index: 3;
+                    transform: translate(-50%, 100%);
+                    color: white;
+                }
+
+            .btn:hover span:after {
+                transform: translate(-50%, 0);
+            }
+
+        @keyframes animate-scaleX {
+            0% {
+                transform: scaleX(1);
+            }
+
+            50% {
+                transform: scaleX(1.05);
+            }
+
+            100% {
+                transform: scaleX(1);
+            }
+        }
+
+        /* ---- Основной стиль страницы ---- */
+
+        .intro {
+            margin-top: 20px;
+            padding: 20px;
+        }
+
+        .content-box {
+            background: #fff;
+            border-radius: 18px;
+            padding: 35px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.12);
+        }
+
+        h2.subheading {
+            font-size: 26px;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+
+        .project-image img {
+            width: 100%;
+            max-width: 550px;
+            display: block;
+            margin: 0 auto 25px;
+            border-radius: 14px;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+        }
+
+        h3 {
+            margin-top: 10px;
+            font-size: 22px;
+        }
+
+        p {
+            line-height: 1.65;
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header class="page-header">
+        <div class="container">
+            <a href="index.html">
+                <div class="btn"><span data-text="Назад">Назад</span></div>
+            </a>
+        </div>
+    </header>
+
+    <section class="intro">
+        <div class="container content-box">
+
+            <h2 class="subheading">Проект 3</h2>
+
+            <figure class="project-image">
+                <img src="rabota2.jpg" alt="Проєкт 2">
+            </figure>
+
+            <h3>Тема:Геометричне тіло з отворами</h3>
+
+            <p>
+                1. Початок роботи: Налаштування та боротьба з форматомЯ почав із самого простого — розмітки аркуша. Я провів тонку рамку та спланував місце для трьох основних проекцій:
+                Головного виду, Виду зверху та Виду зліва. Я знав, що найскладніше — це зберегти зв'язок між ними, тому я дуже старанно проводив тонкі лінії зв'язку по всій довжині та висоті креслення.
+                Навіть найменше зміщення призвело б до помилки в кінцевій формі.
+            </p>
+
+            <p>
+                2. Побудова основних форм та вирізівСаме тіло — це основа з безліччю вирізів.Головний вид (Фронтальна проекція):
+                Тут я зосередився на висоті . Мені потрібно було точно відміряти та провести лінії, що обмежують трапецієподібні скоси та центральну фігуру. Найбільш заплутаним моментом було правильно визначити,
+                де саме закінчуються ці скоси, використовуючи розміри і та ширину . Мені доводилося кілька разів перевіряти, чи правильно я бачу перетин усіх площин.Вид зверху (Горизонтальна проекція):
+                Тут я вперше побачив складний хрестоподібний виріз. Я провів центральні осі, накреслив зовнішнє коло, а потім акуратно наніс лінії, що формують ці чотири симетричні "лопаті".
+                Було важливо, щоб усі вони були ідеально однаковими, і я боявся, що рука здригнеться.Вид зліва (Профільна проекція): Це був справжній тест. Мені довелося перенести всі розміри глибини та висоти ,
+                використовуючи лінію для зв'язку з Видом зверху. Тут я зобразив, як зовнішні зрізи формують контур, а головне — як внутрішні порожнини хреста і кругового отвору проектуються у профіль.
+            </p>
+
+            <p>
+                3. Кульмінація: Перерізи та Невидимі лініїЯ знав, що для демонстрації внутрішньої геометрії мені потрібен переріз.Я обрав площину, що розкриває найбільше інформації, і показав фронтальний переріз
+                та профільний переріз. Я використав тонку лінію для штрихування під кутом, щоб показати, де саме знаходиться матеріал. Цей етап зайняв багато часу, адже кожен штрих мав бути паралельним
+                , рівномірно розташованим і не виходити за контур.Також я не забув про штрихові лінії для елементів, які не видно, наприклад, для отвору , який проходить крізь усе тіло.Праворуч я додав допоміжний
+                переріз, щоб наочно, без заплутування зі штриховими лініями, показати форму цього вирізу-хреста. Це дуже допомогло прояснити загальну картину.
+            </p>
+
+            <p>
+                4. Фініш: Розміри та ОбведенняЯ закінчив роботу,нанісши розміри. Я старався розмістити їх так, щоб не перевантажувати жоден із видів, і щоб кожен розмір був нанесений лише один раз.
+                Коли всі лінії, осі, розміри були на місці, я взяв товстіший олівець (або рейсфедер) і акуратно обвів усі контури. Обведення вимагало максимальної концентрації,
+                адже тут уже не можна було виправити помилки.Це було складно, але результат, з чіткими лініями та зрозумілими проекціями, того вартий. Я виконав усі вимоги стандарту,
+                і тепер можу впевнено сказати, що розібрався у формі цього тіла!
+            </p>
+
+        </div>
+    </section>
+
+</body>
+</html>
